@@ -32,7 +32,9 @@ namespace Selenium_POM_Try
             pageobject page = new pageobject();
             globalWebDriver.driver.Manage().Timeouts().SetPageLoadTimeout(TimeSpan.FromSeconds(10));
             selwrap.openURL("http://admin-demo.nopcommerce.com/login?ReturnUrl=%2fadmin%2f");
-         
+
+            selwrap.input(element.id,page.username,"admin@yourstore.com");
+
             page.username.SendKeys("admin@yourstore.com");           
             page.password.SendKeys("admin");
             page.loginbutton.Click();            

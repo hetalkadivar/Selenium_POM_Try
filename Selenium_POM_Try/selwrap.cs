@@ -31,9 +31,22 @@ namespace Selenium_POM_Try
             }
             if(elem ==  element.xp)
             {
-
+                globalWebDriver.driver.FindElement(By.XPath(target)).Clear();
+                globalWebDriver.driver.FindElement(By.XPath(target)).SendKeys(value);
             }
+            if(elem == element.css)
+            {
+                globalWebDriver.driver.FindElement(By.CssSelector(target)).Clear();
+                globalWebDriver.driver.FindElement(By.CssSelector(target)).SendKeys(value);
+            }
+            if (elem == element.classname)
+            {
+                globalWebDriver.driver.FindElement(By.ClassName(target)).Clear();
+                globalWebDriver.driver.FindElement(By.ClassName(target)).SendKeys(value);
+            }
+
         }
+
         public static void wait(element elem, string target)
         {
             for (int second = 0; ; second++)
